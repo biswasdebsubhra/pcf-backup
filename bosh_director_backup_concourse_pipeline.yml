@@ -1,0 +1,38 @@
+resource_types:
+- name: pivnet
+  type: docker-image
+  source:
+    repository: pivotalcf/pivnet-resource
+    tag: latest-final
+
+resources:
+- name: bbr-pipeline-tasks-repo
+  type: git
+  source:
+    uri: https://github.com/pivotal-cf/bbr-pcf-pipeline-tasks.git    
+    branch: master
+- name: om-backup artifact
+  type: s3
+  source: 
+    bucket: {{backup-artifact-bucket}}
+    region_name: {{storage-region}}
+    endpoint: {{storage-endpoint}}
+    access_key_id: {{storage-access-key-id}}
+    secret_access_key: {{storage-secret-access-key}}
+    versioned_file: installation.zip
+- name: director-backup-bucket
+  type: s3
+  source: 
+    bucket: {{backup-artifact-bucket}}
+    region_name: {{storage-region}}
+    endpoint: {{storage-endpoint}}
+    access_key_id: {{storage-access-key-id}}
+    secret_access_key: {{storage-secret-access-key}}
+    versioned_file: director-backup.tar
+- name: bbr-release
+  type: pivnet
+  source:
+    api_token: {{pivnet-api-token}}
+    product_slug: p-bosh-backup-and-restore
+
+
