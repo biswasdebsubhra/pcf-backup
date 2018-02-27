@@ -9,7 +9,7 @@ resources:
 - name: bbr-pipeline-tasks-repo
   type: git
   source:
-    uri: https://github.com/pivotal-cf/bbr-pcf-pipeline-tasks.git    
+    uri: https://github.com/kirananil007/pcf-backup.git    
     branch: master
 - name: om-backup artifact
   type: s3
@@ -19,7 +19,7 @@ resources:
     endpoint: {{storage-endpoint}}
     access_key_id: {{storage-access-key-id}}
     secret_access_key: {{storage-secret-access-key}}
-    versioned_file: installation.zip
+    versioned_file: installation.zip  
 - name: director-backup-bucket
   type: s3
   source: 
@@ -52,7 +52,7 @@ jobs:
   - put: om-backup-artifact
     params:
       file: om-installation/installation.zip
-      
+
 - name: bbr-backup-director
   serial: true
   plan:
