@@ -8,14 +8,15 @@ image_resource:
 
 inputs:
   - name: bbr-pipeline-tasks-repo
+  - name: binary
 outputs:
-  - name: om-installation
-
-run:
-  path: bbr-pipeline-tasks-repo/tasks/export-om-installation/task.sh
+  - name: director-backup-artifact
 
 params:
   SKIP_SSL_VALIDATION: false
   OPSMAN_URL:
   OPSMAN_USERNAME:
   OPSMAN_PASSWORD:
+
+run:
+  path: bbr-pipeline-tasks-repo/tasks/bbr-backup-director/task.sh
