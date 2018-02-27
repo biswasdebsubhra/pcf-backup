@@ -3,7 +3,7 @@ resources:
 - name: bbr-pipeline-tasks-repo
   type: git
   source:
-    uri: https://github.com/pivotal-cf/bbr-pcf-pipeline-tasks.git
+    uri: https://github.com/kirananil007/pcf-backup.git
     branch: master
     paths: [docker/Dockerfile]
 - name: bbr-pipeline-tasks-image
