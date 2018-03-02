@@ -1,7 +1,7 @@
 #!/bin/bash -eu
 set -x 
 . "$(dirname $0)"/../../scripts/export-director-metadata
-echo "First step is done"
+echo First step is done
 
 om_cmd curl -p /api/v0/deployed/director/credentials/bbr_ssh_credentials > bbr_keys.json
 BOSH_PRIVATE_KEY=$(jq -r '.credential.value.private_key_pem' bbr_keys.json)
