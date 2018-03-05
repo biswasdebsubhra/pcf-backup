@@ -10,14 +10,14 @@ resources:
   type: docker-image
   source:
     tag: final
-    repository: cloudfoundrylondon/bbr-pipeline
+    repository: kiran007anil/pcf-docker
     username: {{dockerhub-username}}
     password: {{dockerhub-password}}
 - name: bbr-pipeline-tasks-image-rc
   type: docker-image
   source:
     tag: release-candidate
-    repository: cloudfoundrylondon/bbr-pipeline
+    repository: kiran007anil/pcf-docker
     username: {{dockerhub-username}}
     password: {{dockerhub-password}}
 
@@ -50,7 +50,7 @@ jobs:
       image_resource:
         type: docker-image
         source:
-          repository: cloudfoundrylondon/bbr-pipeline
+          repository: kiran007anil/pcf-docker
           tag: release-candidate
       run:
         path: sh
