@@ -7,7 +7,7 @@ jobs:
       trigger: true
   - task: export-om-installation
 #    file: /tmp/build/get/tasks/bbr-backup-director/task.yml
-      file: bbr-pipeline-tasks-repo/tasks/export-om-installation/task.yml
+    file: bbr-pipeline-tasks-repo/tasks/export-om-installation/task.yml
     params:
       SKIP_SSL_VALIDATION: {{skip-ssl-validation}}
       OPSMAN_URL: {{opsman-url}}
@@ -45,7 +45,7 @@ jobs:
           cp releases/bbr binary/
   - task: bbr-backup-director
 #    file: /tmp/build/get/tasks/bbr-backup-director/task.yml
-      file: bbr-pipeline-tasks-repo/tasks/bbr-backup-director/task.yml
+    file: bbr-pipeline-tasks-repo/tasks/bbr-backup-director/task.yml
     params:
       SKIP_SSL_VALIDATION: {{skip-ssl-validation}}
       OPSMAN_URL: {{opsman-url}}
