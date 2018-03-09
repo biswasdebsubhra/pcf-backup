@@ -6,7 +6,6 @@ jobs:
     - get: bbr-pipeline-tasks-repo
       trigger: true
   - task: export-om-installation
-#    file: /tmp/build/get/tasks/bbr-backup-director/task.yml
     file: bbr-pipeline-tasks-repo/tasks/export-om-installation/task.yml
     params:
       SKIP_SSL_VALIDATION: {{skip-ssl-validation}}
@@ -44,7 +43,6 @@ jobs:
           tar -xvf bbr-release/bbr*.tar
           cp releases/bbr binary/
   - task: bbr-backup-director
-#    file: /tmp/build/get/tasks/bbr-backup-director/task.yml
     file: bbr-pipeline-tasks-repo/tasks/bbr-backup-director/task.yml
     params:
       SKIP_SSL_VALIDATION: {{skip-ssl-validation}}

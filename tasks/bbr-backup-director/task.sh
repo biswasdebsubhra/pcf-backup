@@ -1,7 +1,7 @@
 #!/bin/bash -eu
 set -x 
-#. "$(dirname $0)"/../../scripts/export-director-metadata
-./home/dbiswas/pcf-backup/scripts/export-director-metadata
+. "$(dirname $0)"/../../scripts/export-director-metadata
+#./home/dbiswas/pcf-backup/scripts/export-director-metadata
 echo First step is done
 
 om_cmd curl -p /api/v0/deployed/director/credentials/bbr_ssh_credentials > bbr_keys.json
