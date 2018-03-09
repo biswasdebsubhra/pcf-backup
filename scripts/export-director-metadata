@@ -1,6 +1,7 @@
 #!/bin/bash -eu
 
-source "$(dirname $BASH_SOURCE)"/om-cmd
+#source "$(dirname $BASH_SOURCE)"/om-cmd
+echo "Hello Smartshift"
 
 om_cmd curl -p /api/v0/deployed/director/manifest > director_manifest.json
 
