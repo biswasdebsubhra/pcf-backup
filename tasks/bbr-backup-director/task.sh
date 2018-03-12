@@ -1,5 +1,4 @@
 #!/bin/bash -eu
-set -x 
 . "$(dirname $0)"/../../scripts/export-director-metadata
 #./home/dbiswas/pcf-backup/scripts/export-director-metadata
 echo First step is done
