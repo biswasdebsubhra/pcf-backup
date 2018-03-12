@@ -19,4 +19,10 @@ params:
   OPSMAN_PASSWORD:
 
 run:
-  path: ./bbr-pipeline-tasks-repo/tasks/bbr-backup-director/task.sh
+  path: /bin/sh
+  args:
+  - -c
+  - |
+    cd bbr-pipeline-tasks-repo/tasks/bbr-backup-director/
+    chmod +x task.sh
+    ./task.sh
