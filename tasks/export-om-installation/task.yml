@@ -12,7 +12,13 @@ outputs:
   - name: om-installation
 
 run:
-  path: ./bbr-pipeline-tasks-repo/tasks/export-om-installation/task.sh
+  path: /bin/sh
+  args:
+  - -c
+  - |
+    cd bbr-pipeline-tasks-repo/tasks/export-om-installation/
+    chmod +x task.sh
+    ./task.sh
 
 params:
   SKIP_SSL_VALIDATION: false
